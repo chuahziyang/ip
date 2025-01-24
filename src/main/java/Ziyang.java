@@ -1,28 +1,38 @@
 
 public class Ziyang {
-    public static void main(String[] args) {
-      System.out.println("Hello! I'm Zi Yang");
-      System.out.println("What can I do for you?");
-      System.out.println("---------------------------");
 
-      String[] items = new String[100];
+    public static void wrapPrint(String msg){
+      System.out.println("---------------------------");
+      System.out.println(msg);
+      System.out.println("---------------------------");
+    }
+    public static void main(String[] args) {
+
+      wrapPrint("Hello! I'm Zi Yang\nWhat can I do for you?");
+      Task[] items = new Task[100];
 
       String input = System.console().readLine();
       int i = 0;
-      while (input.equals("bye") == false) {
-        if (input.equals("list")) {
-          System.out.println("---------------------------");
+      while (true) {
+        if(input.equals("bye") == true){
+          break;
+        }
+        else if (input.equals("list")) {
+          String msg = "Here are the tasks in your list:\n";
           for (int j = 0; j < i; j++) {
-            System.out.println(j + ". " + items[j]);
+            msg += j + ". " + items[j].toString() + "\n";
           }
-          System.out.println("---------------------------");
+          wrapPrint(msg);
+        }
+        else if (input.startsWith("mark")) {
+          String j = input.split(" ")[1];
+          items[Integer.parseInt(j)].mark();
+          wrapPrint("Nice! I've marked this task as done:\n " + items[Integer.parseInt(j)].toString());
         }
         else{
-          System.out.println("---------------------------");
-          items[i] = input;
+          items[i] = new Task(input);
           i++;
-          System.out.println("added: " + input);
-          System.out.println("---------------------------");
+          wrapPrint("added: " + input);
         }
         input = System.console().readLine();
       }
