@@ -29,11 +29,29 @@ public class Ziyang {
           items[Integer.parseInt(j)].mark();
           wrapPrint("Nice! I've marked this task as done:\n " + items[Integer.parseInt(j)].toString());
         }
-        else{
-          items[i] = new Task(input);
+        else if (input.startsWith("todo")) {
+          String j = input.split(" ")[1];
+          items[i] = new Task(j, Task.Type.T, "", "");
           i++;
-          wrapPrint("added: " + input);
+          wrapPrint("added: " + j);
         }
+        else if (input.startsWith("deadline")) {
+          String j = input.split(" ")[1];
+          String deadline = input.split(" ")[3];;
+          items[i] = new Task(j, Task.Type.D, "", deadline);
+          i++;
+          wrapPrint("added: " + j);
+        }
+        else if (input.startsWith("event")) {
+          String j = input.split(" ")[1];
+          String start = input.split(" ")[3];
+          String end = input.split(" ")[5];
+          items[i] = new Task(j, Task.Type.E, start, end);
+          i++;
+          wrapPrint("added: " + j);
+        }
+
+
         input = System.console().readLine();
       }
 
