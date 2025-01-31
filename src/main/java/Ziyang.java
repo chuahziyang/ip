@@ -1,17 +1,39 @@
 import java.util.Scanner;
-public class Ziyang {
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.FileNotFoundException;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
 
+public class Ziyang {
     public static void wrapPrint(String msg){
       System.out.println("---------------------------");
       System.out.println(msg);
       System.out.println("---------------------------");
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException , IOException {
 
       wrapPrint("Hello! I'm Zi Yang\nWhat can I do for you?");
-      Task[] items = new Task[100];
-      Scanner myObj = new Scanner(System.in);  // Create a Scanner object
 
+      Task[] items = null;
+
+      try{
+        FileInputStream fileIn = new FileInputStream("database.data");
+        ObjectInputStream in = new ObjectInputStream(fileIn);
+        items = (Task[]) in.readObject();
+        System.out.println(items[0]);
+      }catch (Exception e){
+        System.out.println("No database found.");
+        items = new Task[100];
+      }
+
+      FileOutputStream fileOut = new FileOutputStream("database.data");
+      ObjectOutputStream out = new ObjectOutputStream(fileOut);
+
+      //Task[] items = new Task[100];
+      Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+                                               //
       String input = myObj.nextLine();
       int i = 0;
       while (true) {
@@ -62,9 +84,14 @@ public class Ziyang {
           else{
             wrapPrint("I don't understand what you want to do. Please try again.");
           }
+          out.writeObject(items);
+          //out.close();
+          //fileOut.close();
           input = myObj.nextLine();
+
         }
         catch (Exception e){
+          System.out.println(e);
           wrapPrint("Incorrect input, please try again.");
           input = myObj.nextLine();
         }
@@ -73,6 +100,8 @@ public class Ziyang {
       System.out.println("---------------------------");
       System.out.println("Bye. Hope to see you again soon!");
       System.out.println("---------------------------");
+      out.close();
+      fileOut.close();
     }
 }
 
