@@ -1,11 +1,13 @@
-
+import java.time.LocalDate;
 public class eventTask extends Task {
-    public String start;
-    public String end;
+    public LocalDate start;
+    public LocalDate end;
     public eventTask(String description, String start, String end) {
       super(description);
-      this.start = start;
-      this.end = end;
+      LocalDate startdate = LocalDate.parse(start);
+      LocalDate enddate = LocalDate.parse(end);
+      this.start = startdate;
+      this.end = enddate;
     }
 
     public String toString() {
