@@ -39,6 +39,16 @@ public class Parser {
       items.remove(Integer.parseInt(j));
       return "Nice! I've marked this task as deleted";
     }
+    else if (this.nextinput.startsWith("find")) {
+      String j = this.nextinput.split(" ")[1];
+      String msg = "Here are the tasks that contain " + j + ":\n";
+      for (Task item : items) {
+        if(item.toString().contains(j)){
+          msg += item.toString() + "\n";
+        }
+      }
+      return msg;
+    }
     else if (this.nextinput.startsWith("todo")) {
       String j = this.nextinput.split(" " ,2)[1];
       items.add(new todoTask(j));
