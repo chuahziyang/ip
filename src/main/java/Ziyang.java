@@ -1,4 +1,4 @@
-
+import java.util.Scanner;
 public class Ziyang {
 
     public static void wrapPrint(String msg){
@@ -10,8 +10,10 @@ public class Ziyang {
 
       wrapPrint("Hello! I'm Zi Yang\nWhat can I do for you?");
       Task[] items = new Task[100];
+      Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+      System.out.println("Enter username");
 
-      String input = System.console().readLine();
+      String input = myObj.nextLine();
       int i = 0;
       while (true) {
         if(input.equals("bye") == true){
@@ -52,7 +54,7 @@ public class Ziyang {
         }
 
 
-        input = System.console().readLine();
+        input = myObj.nextLine();
       }
 
       System.out.println("---------------------------");
