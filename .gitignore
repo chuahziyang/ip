@@ -8,6 +8,7 @@
 /build/
 src/main/resources/docs/
 src/main/java/*.class
+src/main/java/ziyang/*.class
 
 # MacOS custom attributes files created by Finder
 .DS_Store

@@ -1,3 +1,4 @@
+package ziyang;
 
 public class UI {
     public void answer(String msg){

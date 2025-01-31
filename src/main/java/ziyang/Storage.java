@@ -1,3 +1,4 @@
+package ziyang;
 import java.util.LinkedList;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;

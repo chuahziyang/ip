@@ -1,3 +1,4 @@
+package ziyang;
 import java.util.Scanner;
 import java.io.FileOutputStream;
 import java.io.IOException;
