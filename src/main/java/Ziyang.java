@@ -22,7 +22,9 @@ public class Ziyang {
           else if (input.equals("list")) {
             String msg = "Here are the tasks in your list:\n";
             for (int j = 0; j < i; j++) {
-              msg += j + ". " + items[j].toString() + "\n";
+              if (items[j].isDeleted() == false) {
+                msg += j + ". " + items[j].toString() + "\n";
+              }
             }
             wrapPrint(msg);
           }
@@ -30,6 +32,11 @@ public class Ziyang {
             String j = input.split(" ")[1];
             items[Integer.parseInt(j)].mark();
             wrapPrint("Nice! I've marked this task as done:\n " + items[Integer.parseInt(j)].toString());
+          }
+          else if (input.startsWith("delete")) {
+            String j = input.split(" ")[1];
+            items[Integer.parseInt(j)].delete();
+            wrapPrint("Nice! I've marked this task as deleted:\n " + items[Integer.parseInt(j)].toString());
           }
           else if (input.startsWith("todo")) {
             String j = input.split(" ")[1];

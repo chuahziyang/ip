@@ -6,6 +6,7 @@ public class Task {
     protected Type type = Type.T;
     protected String by;
     protected String from;
+    protected boolean isDeleted;
 
     public Task(String description, Type type, String from, String by) {
         this.description = description;
@@ -33,6 +34,14 @@ public class Task {
           return " (from: " + this.from + " to: " + this.by + ")";
       }
       return "";
+    }
+
+    public boolean isDeleted() {
+        return isDeleted;
+    }
+
+    public void delete() {
+        this.isDeleted = true;
     }
 
     public String toString() {
