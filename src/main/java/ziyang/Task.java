@@ -15,8 +15,8 @@ public class Task implements Serializable {
         return (isDone ? "[X]:" : "[ ]:"); // mark done task with X
     }
 
-    public void mark(){
-      this.isDone = true;
+    public void mark() {
+        this.isDone = true;
     }
 }
 
