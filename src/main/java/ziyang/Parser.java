@@ -57,8 +57,6 @@ public class Parser {
             return "I don't understand what you want to do. Please try again.";
         }
     }
-<<<<<<< HEAD
-=======
     else if (this.nextinput.startsWith("mark")) {
       String j = this.nextinput.split(" ")[1];
       items.get(Integer.parseInt(j)).mark();
@@ -101,7 +99,4 @@ public class Parser {
       return "I don't understand what you want to do. Please try again.";
     }
   }
->>>>>>> Level-9
-
-
 }
