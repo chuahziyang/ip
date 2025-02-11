@@ -5,34 +5,13 @@ import java.io.IOException;
 import java.util.LinkedList;
 
 public class Ziyang {
-    public static void main(String[] args) throws FileNotFoundException, IOException {
-        UI ui = new UI();
-        Storage storage = new Storage("database.data");
-
-        LinkedList<Task> items = storage.read();
-        Parser parser = new Parser(items);
-
-        ui.welcome();
-
-
-        parser.getInput();
-
-        while (true) {
-            if (parser.isEnd()) {
-                break;
-            }
-            String msg = parser.evaluate();
-            ui.answer(msg);
-            parser.getInput();
-        }
-
-        storage.write(items);
-
-        ui.answer("Bye. Hope to see you again soon!");
-    }
+    private UI ui = new UI();
+    private Storage storage = new Storage("database.data");
+    private LinkedList<Task> items = storage.read();
+    private Parser parser = new Parser(items);
 
     public String getResponse(String input) {
-        return "Duke heard: " + input;
+        return parser.getResponse(input);
     }
 }
 

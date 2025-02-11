@@ -22,6 +22,7 @@ public class Main extends Application {
             Scene scene = new Scene(ap);
             stage.setScene(scene);
             fxmlLoader.<MainWindow>getController().setDuke(ziyang);  // inject the Duke instance
+            fxmlLoader.<MainWindow>getController().sendMessage("Hello! I'm Zi Yang\nWhat can I do for you?");  // inject the Duke instance
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
