@@ -30,5 +30,9 @@ public class Ziyang {
 
         ui.answer("Bye. Hope to see you again soon!");
     }
+
+    public String getResponse(String input) {
+        return "Duke heard: " + input;
+    }
 }
 
