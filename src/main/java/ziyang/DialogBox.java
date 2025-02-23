@@ -57,3 +57,5 @@ public class DialogBox extends HBox {
         return db;
     }
 }
+
+//done just need merge
