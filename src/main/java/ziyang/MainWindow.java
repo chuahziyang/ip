@@ -34,6 +34,12 @@ public class MainWindow extends AnchorPane {
         ziyang = d;
     }
 
+    public void sendMessage(String msg) {
+        dialogContainer.getChildren().addAll(
+                DialogBox.getDukeDialog(msg, dukeImage)
+        );
+    }
+
     /**
      * Creates two dialog boxes, one echoing user input and the other containing Duke's reply and then appends them to
      * the dialog container. Clears the user input after processing.
@@ -48,4 +54,5 @@ public class MainWindow extends AnchorPane {
         );
         userInput.clear();
     }
+
 }
