@@ -1,7 +1,5 @@
 # Ziyang's User Guide
 
-// Product screenshot goes here
-
 ![UI](UI.png)
 
 Hi, I'm Zi Yang, your personal assistant. I'm here to help you with your tasks. I can do the following:
