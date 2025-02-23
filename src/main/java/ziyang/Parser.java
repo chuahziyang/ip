@@ -22,7 +22,7 @@ public class Parser {
     }
 
     public String getResponse(String input) {
-        if (input.equals("list")) {
+        if (input.equals("list") || input.equals("l")) {
             String msg = "Here are the tasks in your list:\n";
             int i = 0;
             for (Task item : items) {
@@ -30,24 +30,24 @@ public class Parser {
                 i++;
             }
             return msg;
-        } else if (input.startsWith("mark")) {
+        } else if (input.startsWith("mark") || input.startsWith("m ")) {
             String j = input.split(" ")[1];
             items.get(Integer.parseInt(j)).mark();
             return "Nice! I've marked this task as done:\n " + items.get(Integer.parseInt(j)).toString();
-        } else if (input.startsWith("delete")) {
+        } else if (input.startsWith("delete") || input.startsWith("d ")) {
             String j = input.split(" ")[1];
             items.remove(Integer.parseInt(j));
             return "Nice! I've marked this task as deleted";
-        } else if (input.startsWith("todo")) {
+        } else if (input.startsWith("todo") || input.startsWith("t ")) {
             String j = input.split(" ", 2)[1];
             items.add(new todoTask(j));
             return "added: " + j;
-        } else if (input.startsWith("deadline")) {
+        } else if (input.startsWith("deadline") || input.startsWith("d ")) {
             String j = input.split("/")[0].split(" ", 2)[1];
             String deadline = input.split("/")[1].split(" ", 2)[1];
             items.add(new deadlineTask(j, deadline));
             return "added: " + j;
-        } else if (input.startsWith("event")) {
+        } else if (input.startsWith("event") || input.startsWith("e ")) {
             String j = input.split("/")[0].split(" ", 2)[1];
             String start = input.split("/")[1].split(" ", 2)[1];
             String end = input.split("/")[2].split(" ", 2)[1];
