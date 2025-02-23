@@ -54,22 +54,3 @@ The task number is the number of the task in the list of tasks. The task will be
 list or l
 ```
 
-# Examples
-
-// Give examples of usage
-
-Example: `keyword (optional arguments)`
-
-// A description of the expected outcome goes here
-
-```
-expected output
-```
-
-## Feature ABC
-
-// Feature details
-
-## Feature XYZ
-
-// Feature details
