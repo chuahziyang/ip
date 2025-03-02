@@ -16,7 +16,7 @@ Hi, I'm Zi Yang, your personal assistant. I'm here to help you with your tasks. 
 deadline /by (deadline date)/ (task description) or d /by (deadline date) (task description)
 ```
 
-Deadlines are added to the list of tasks. Dates can be in any format
+Deadlines are added to the list of tasks. Dates can be in any format aka write any text
 
 ## Adding events
 
@@ -24,7 +24,7 @@ Deadlines are added to the list of tasks. Dates can be in any format
 event /from (start date) /to (end date) or e /from (start date) /to (end date) (task description)
 ```
 
-Events are added to the list of tasks. Dates can be in any format
+Events are added to the list of tasks. Dates can be in any format aka write any text
 
 ## Adding tasks
 ```
