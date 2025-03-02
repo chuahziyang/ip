@@ -1,6 +1,6 @@
 # Ziyang's User Guide
 
-![UI](./UI.png)
+![UI](./Ui.png)
 
 Hi, I'm Zi Yang, your personal assistant. I'm here to help you with your tasks. I can do the following:
 
